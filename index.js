@@ -1,7 +1,8 @@
-var admin = require("firebase-admin");
+import {initializeApp, applicationDefault} from 'firebase-admin/app';
+import {getMessaging} from "firebase-admin/messaging";
+import express, {json} from "express";
 
-var serviceAccount = require("path/to/serviceAccountKey.json");
-
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+initializeApp ({
+  Credential: applicationDefault(),
+  projectId: 'potion-for-creators'
 });
